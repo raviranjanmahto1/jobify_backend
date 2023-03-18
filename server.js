@@ -13,7 +13,7 @@ import xss from "xss-clean";
 import mongoSanitize from "express-mongo-sanitize";
 import cookieParser from "cookie-parser";
 
-// import cors from "cors";
+import cors from "cors";
 import notFoundMiddleware from "./middleware/notFound.js";
 import errorHandlerMiddleware from "./middleware/errorHandler.js";
 import connectDB from "./db/connect.js";
@@ -22,7 +22,7 @@ import jobsRouter from "./routes/jobsRoutes.js";
 import authenticateUser from "./middleware/auth.js";
 
 const app = express();
-// app.use(cors());
+app.use(cors());
 
 if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev"));
