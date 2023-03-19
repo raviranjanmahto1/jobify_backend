@@ -5,7 +5,7 @@ const auth = async (req, res, next) => {
   const token = req.cookies.token;
   if (!token) {
     throw new UnAuthenticateError(
-      "Authentication Invalid, Please login again!"
+      "No token, Authentication Invalid, Please login again!"
     );
   }
   try {
